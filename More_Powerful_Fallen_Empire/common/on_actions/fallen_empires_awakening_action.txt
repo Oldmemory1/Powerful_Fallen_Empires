@@ -1,0 +1,10 @@
+on_game_start = {
+	events = {
+		powerful_fallen_empire.3
+	}
+}
+on_late_game_pulse = {
+	events = {
+		powerful_fallen_empire.1
+	}
+}

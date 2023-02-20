@@ -1,0 +1,89 @@
+create_fallen_empire_fleet = {
+	owner = {
+		create_leader = {
+			class = admiral
+			species = ruler.species
+			name = random
+			skill = 10
+			traits = {
+				trait = random_trait
+			}
+		}
+		fire_on_action = {
+			on_action = on_leader_spawned
+			scopes = {
+				from = last_created_leader
+			}
+		}
+	}
+	create_fleet = {
+		settings = {
+			can_change_composition = no
+		}
+		effect = {
+			set_owner = prev.owner
+			while = {
+				count = 15
+				create_fallen_empire_large_ship = yes
+			}
+			while = {
+				count = 24
+				create_fallen_empire_small_ship = yes
+			}
+			while=  {
+			    count = 1
+			    create_fallen_empire_titan = yes
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 90
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 120
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 150
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	last_created_fleet = { assign_leader = last_created_leader }
+}
+add_awakened_fallen_empire_fleet = {
+	country_event = { id = fallen_empires.13 }
+	if = {
+	   limit = {
+	        count_owned_ship = {
+			limit = {
+				is_ship_class = shipclass_military
+			}
+			   count <= 200
+		    }
+		}
+		capital_scope = {
+			while = {
+				count = 4
+				create_fallen_empire_fleet = yes
+			}
+		}
+	}
+}

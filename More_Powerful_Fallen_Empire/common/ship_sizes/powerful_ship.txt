@@ -1,0 +1,297 @@
+#reloadable with 'reload stats'
+# This file is where you start when you want to configure something new, then go to sections
+
+@corvette_collision_radius = 2.0
+@corvette_formation_priority = 4
+
+@destroyer_collision_radius = 2.5
+@destroyer_formation_priority = 2
+
+@cruiser_collision_radius = 3.5
+@cruiser_formation_priority = 3
+
+@battleship_collision_radius = 6
+@battleship_formation_priority = 5
+
+@titan_collision_radius = 12
+@titan_formation_priority = 1
+
+@build_block_radius_none = 0
+@build_block_radius_civilian = 20
+@build_block_radius_military = 200
+
+@speed_very_slow = 80
+@speed_slow = 100
+@speed_default = 120
+@speed_fast = 140
+@speed_very_fast = 160
+
+#################
+# FALLEN EMPIRE #
+#################
+
+# Fallen Empire Massive Ship
+powerful_massive_ship_fallen_empire = {
+	formation_priority = @titan_formation_priority
+	#entity = titan_entity
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
+	max_speed = @speed_slow
+	acceleration = 0.15
+	rotation_speed = 0.1
+	collision_radius = @titan_collision_radius
+	modifier = {
+		ship_evasion_add = 3
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.5
+		ship_armor_mult = 3
+		ship_shield_mult = 3
+	}
+	ship_modifier = {
+		ship_shield_hardening_add = 0.5
+		ship_armor_hardening_add  = 0.5
+	}
+	max_hitpoints = 50000
+	size_multiplier = 32
+	fleet_slot_size = 16
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon = ship_size_military_16
+
+	combat_disengage_chance = 0.5
+
+	resources = {
+		category = ships
+		cost = {
+			alloys = 10000
+		}
+	}
+
+	base_buildtime = 1800
+
+	use_shipnames_from = titan
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	is_designable = no
+
+	potential_country = {
+		is_fallen_empire = yes
+	}
+
+	ai_ship_data = {
+		min = 1
+		max = 2
+		planet_mult = 0.1
+	}
+}
+
+# Fallen Empire Large Ship
+powerful_large_ship_fallen_empire = {
+	formation_priority = @battleship_formation_priority
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
+	max_speed = @speed_slow
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @battleship_collision_radius
+	modifier = {
+		ship_evasion_add = 20
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.5
+		ship_armor_mult = 1
+		ship_shield_mult = 1
+		ship_base_speed_mult = 1
+	}
+	ship_modifier = {
+		ship_shield_hardening_add = 0.5
+		ship_armor_hardening_add  = 0.5
+	}
+	max_hitpoints = 10000
+	size_multiplier = 8
+	fleet_slot_size = 4
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = no
+	icon = ship_size_military_8
+
+	combat_disengage_chance = 1.0
+
+	resources = {
+		category = ships
+		cost = {
+			alloys = 2000
+		}
+	}
+
+	base_buildtime = 600
+
+	use_shipnames_from = battleship
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	is_designable = no
+
+	potential_country = {
+		is_fallen_empire = yes
+	}
+	ai_ship_data = {
+		fraction = 1 #note: this is naval cap use, it divides by size_multiplier
+	}
+}
+
+# Fallen Empire Small Ship
+powerful_small_ship_fallen_empire = {
+	formation_priority = @destroyer_formation_priority
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
+	max_speed = @speed_fast
+	acceleration = 0.3
+	rotation_speed = 0.2
+	collision_radius = @destroyer_collision_radius
+	modifier = {
+		ship_evasion_add = 60
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.5
+		ship_armor_mult = 1
+		ship_shield_mult = 1
+		ship_base_speed_mult = 2
+	}
+	ship_modifier = {
+		ship_shield_hardening_add = 0.5
+		ship_armor_hardening_add  = 0.5
+	}
+	max_hitpoints = 5000
+	size_multiplier = 2
+	fleet_slot_size = 2
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	icon = ship_size_military_2
+	is_space_station = no
+
+	combat_disengage_chance = 1.5
+
+	resources = {
+		category = ships
+		cost = {
+			alloys = 500
+		}
+	}
+
+	base_buildtime = 200
+
+	use_shipnames_from = destroyer
+
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	is_designable = no
+
+	potential_country = {
+		is_fallen_empire = yes
+	}
+	ai_ship_data = {
+		fraction = 1
+	}
+}
+
+# Fallen Empire Defense Platform
+powerful_military_station_small_fallen_empire = {
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
+	max_speed = 6
+	rotation_speed = 10
+	acceleration = 10
+	modifier = {
+		ship_evasion_mult = -1
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.5
+		ship_armor_mult = 10
+		ship_shield_mult = 10
+	}
+	ship_modifier = {
+		ship_weapon_range_mult = 0.20
+		ship_shield_hardening_add = 0.5
+		ship_armor_hardening_add  = 0.5
+	}
+	max_hitpoints = 100000
+
+	combat_size_multiplier = 4
+	size_multiplier = 2
+	fleet_slot_size = 2
+	section_slots = {
+		"mid" = { locator = "part1" }
+	}
+	num_target_locators = 0
+	is_space_station = yes
+	build_block_radius = @build_block_radius_military
+
+	uses_name_prefix = no
+	takes_name_from_ship_design = yes
+
+	resources = {
+		category = ships
+		cost = {
+			alloys = 1000
+		}
+	}
+
+	base_buildtime = 365
+
+	use_shipnames_from = military_station_small
+
+	class = shipclass_military_station
+	construction_type = starbase_defenses
+	is_designable = no
+	icon = ship_size_military_station
+}
+#colossus
+powerful_fe_colossus = {
+	graphical_culture = { "fallen_empire_01" "fallen_empire_02" "fallen_empire_03" "fallen_empire_04" "fallen_machine_empire_01" }
+	formation_priority = @colossus_formation_priority
+	entity = "colossus_entity"
+	max_speed = @speed_very_slow
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @colossus_collision_radius
+	max_hitpoints = 200000
+	modifier = {
+		ship_evasion_add = @colossus_evasion
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+		ship_shield_regen_add_perc = 0.5
+		ship_armor_mult = 5
+		ship_shield_mult = 5
+	}
+	ship_modifier = {
+		ship_shield_hardening_add = 0.5
+		ship_armor_hardening_add  = 0.5
+	}
+	size_multiplier = 32
+	fleet_slot_size = 32
+	section_slots = { "ship" = { locator = "frame_ship" } }
+	num_target_locators = 4
+	is_space_station = no
+	icon = ship_size_military_32
+	base_buildtime = @colossus_build_time
+	can_have_federation_design = no
+	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	combat_disengage_chance = 1.0
+	is_designable = no
+
+	use_shipnames_from = colossus
+
+	class = shipclass_military_special
+	construction_type = starbase_shipyard
+
+	potential_country = {
+		is_fallen_empire = yes
+	}
+	resources = {
+		category = ships
+		cost = {
+			alloys = 10000
+		}
+	}
+}

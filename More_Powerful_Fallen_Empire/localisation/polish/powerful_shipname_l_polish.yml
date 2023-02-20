@@ -1,0 +1,17 @@
+﻿l_polish:
+#ship
+ powerful_massive_ship_fallen_empire: "$massive_ship_fallen_empire$"
+ powerful_massive_ship_fallen_empire_plural: "$massive_ship_fallen_empire$"
+ powerful_large_ship_fallen_empire: "$large_ship_fallen_empire$"
+ powerful_large_ship_fallen_empire_plural: "$large_ship_fallen_empire$"
+ powerful_small_ship_fallen_empire: "$small_ship_fallen_empire$"
+ powerful_small_ship_fallen_empire_plural: "$small_ship_fallen_empire$"
+ powerful_military_station_small_fallen_empire: "$military_station_small_fallen_empire$"
+ powerful_military_station_small_fallen_empire_plural: "$military_station_small_fallen_empire$"
+ powerful_fe_colossus: "$colossus$"
+ powerful_fe_colossus_plural: "$colossus$"
+#component
+ powerful_fallen_empire_TITAN_LASER: "$TITAN_LASER$"
+ powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_ADVANCED: "$COMBAT_COMPUTER_ARTILLERY_ADVANCED$"
+ powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_SAPIENT: "$COMBAT_COMPUTER_ARTILLERY_SAPIENT$"
+ powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_PRECOG: "$COMBAT_COMPUTER_ARTILLERY_PRECOG$"

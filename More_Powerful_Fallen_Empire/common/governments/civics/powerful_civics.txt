@@ -1,0 +1,71 @@
+civic_revanchist_fervor = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_revanchist_fervor.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
+	random_weight = { base = 5 }
+	modifier = { 
+		country_base_influence_produces_add = 1
+		country_naval_cap_add = 5000
+		empire_size_penalty_mult = -1
+	}
+}
+civic_ancient_caches_of_technology = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_ancient_caches_of_technology.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		ethics = { NOT = { value = ethic_gestalt_consciousness } }
+	}
+	random_weight = { base = 5 }
+	modifier = { 
+		planet_jobs_produces_mult = 0.5	
+		ship_weapon_damage = 0.5
+	}
+}
+civic_malfunctioning_custodian = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_malfunctioning_custodian.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		ethics = { value = ethic_gestalt_consciousness }
+		authority = { value = auth_machine_intelligence }
+	}
+	random_weight = { base = 5 }
+	modifier = { 
+		planet_jobs_energy_produces_mult = 0.5	
+		ship_weapon_damage = 0.5
+	}
+}
+civic_final_defense_protocols = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_final_defense_protocols.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		ethics = { value = ethic_gestalt_consciousness }
+		authority = { value = auth_machine_intelligence }
+	}
+	random_weight = { base = 5 }
+	modifier = { 		
+		ship_fire_rate_mult = 1.0
+		planet_jobs_energy_produces_mult = 0.5
+		ship_weapon_damage = 0.5
+	}
+}
+civic_awakened_machine = {
+	modification = no
+	icon = "gfx/interface/icons/governments/civics/civic_awakened_machine.dds"
+	potential = {
+		country_type = { value = awakened_fallen_empire }
+		ethics = { value = ethic_gestalt_consciousness }
+		authority = { value = auth_machine_intelligence }
+	}
+	random_weight = { base = 5 }
+	description = FALLEN_EMPIRE_LETHARGY_2
+	modifier = {
+		country_naval_cap_add = 5000
+		empire_size_penalty_mult = -1
+	}
+}

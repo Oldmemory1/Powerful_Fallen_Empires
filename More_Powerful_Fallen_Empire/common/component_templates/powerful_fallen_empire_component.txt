@@ -1,0 +1,129 @@
+weapon_component_template = {
+	key = "powerful_fallen_empire_TITAN_LASER"
+	size = titanic
+	type = instant
+	prio_projectile = yes
+	
+	hidden = yes
+	
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	min_range = 100
+	use_ship_kill_target = no
+	
+	power = -500
+	damage = { min = 15000 max = 20000 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 12
+	range = 500.0
+	accuracy = 1.0
+	tracking = 0.5
+	shield_damage = 1.0
+	armor_damage = 1.0
+	hull_damage = 1.0
+	shield_penetration = 0
+	armor_penetration = 0
+
+	tags = { weapon_type_energy }
+	
+	component_set = "TITAN_LASER"
+	projectile_gfx = "titan_laser"
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @titanic_t6_cost
+			rare_crystals = @titanic_t6_rare
+		}		
+		upkeep = {
+			energy = @titanic_t6_upkeep_energy
+			alloys = @titanic_t6_upkeep_alloys
+		}
+	}
+
+	target_weights = {
+		titan = 3
+		battleship = 2
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#####
+utility_component_template = {
+	key = "powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_advanced"
+	icon_frame = 1
+	power = 15
+	hidden = yes
+	size_restriction = {
+		powerful_massive_ship_fallen_empire
+	}
+	component_set = "combat_computers"
+	ship_behavior = "powerful_fe_artillery"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_weapon_range_mult = 0.10
+	}
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_SAPIENT"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = 25
+	hidden = yes
+	size_restriction = {
+		powerful_massive_ship_fallen_empire
+	}
+	component_set = "combat_computers"
+	ship_behavior = "powerful_fe_artillery"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
+	key = "powerful_fe_titan_COMBAT_COMPUTER_ARTILLERY_PRECOG"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	power = 25
+	hidden = yes
+	size_restriction = {
+		powerful_massive_ship_fallen_empire
+	}
+	component_set = "combat_computers"
+	ship_behavior = "powerful_fe_artillery"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+
+	ai_weight = {
+		weight = 4
+	}
+}
